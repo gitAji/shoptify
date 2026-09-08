@@ -1,7 +1,7 @@
-# Distribution package (for selling Reloop Resale directly)
+# Distribution package (for selling Reloop Resale on themes.aone.no)
 
-Source files for packaging Reloop Resale as a self-sold digital product
-(Gumroad, Lemon Squeezy, or your own site) — not part of the Shopify theme
+Source files for packaging Reloop Resale as a self-sold digital product on
+**themes.aone.no** (author: **aone**) — not part of the Shopify theme
 itself, and not uploaded to a Shopify store.
 
 - `documentation.html` — buyer-facing setup/customization guide (also see [`../docs/USER-GUIDE.md`](../docs/USER-GUIDE.md), which is bundled alongside it in the package).
@@ -56,6 +56,6 @@ unzip -q "Theme Files/reloop-resale-theme.zip" -d /tmp/verify && (cd /tmp/verify
 
 ## What's NOT done for you
 
-- Creating your Gumroad/Lemon Squeezy account and the actual product listing.
+- Publishing the actual product listing on themes.aone.no.
 - Legal review of `LICENSE.md`.
 - Setting a final price (see `listing-copy.md` for a suggested range).

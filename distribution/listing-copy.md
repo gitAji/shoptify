@@ -1,7 +1,12 @@
 # Listing copy — Reloop Resale
 
-Ready to paste into a Gumroad or Lemon Squeezy product page. Adjust price,
-your name/store, and support terms before publishing.
+Ready to paste into your product page on **themes.aone.no** (author: **aone**).
+Adjust price and support terms before publishing.
+
+## Author / storefront
+
+- **Author:** aone
+- **Store:** [themes.aone.no](https://themes.aone.no)
 
 ## Product title
 

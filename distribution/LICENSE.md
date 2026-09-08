@@ -1,9 +1,13 @@
 # Reloop Resale — License Agreement
 
+**Author / Licensor:** aone
+**Sold via:** [themes.aone.no](https://themes.aone.no)
+**© 2026 aone. All rights reserved.**
+
 This is a template license for selling Reloop Resale as a commercial digital
-product (e.g. via Gumroad, Lemon Squeezy, or your own site). **It is
-boilerplate, not legal advice** — have it reviewed by a lawyer familiar with
-your jurisdiction before publishing it as a binding agreement with buyers.
+product on themes.aone.no. **It is boilerplate, not legal advice** — have
+it reviewed by a lawyer familiar with your jurisdiction before publishing
+it as a binding agreement with buyers.
 
 ---
 

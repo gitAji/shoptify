@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reloop Resale — Documentation</title>
+<style>
+  :root {
+    --bg: #F8EDEB; --surface: #ffffff; --text: #3A2C27; --muted: #7A6A63;
+    --primary: #FEC89A; --primary-text: #3A2C27; --accent: #FEC5BB;
+    --border: #E8E8E4; --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px 80px; }
+  header.hero { background: linear-gradient(160deg, #FEC89A, #FEC5BB); padding: 64px 24px 56px; text-align: center; }
+  header.hero h1 { font-size: 2.4rem; margin: 0 0 8px; }
+  header.hero p { font-size: 1.05rem; margin: 0; opacity: .85; }
+  nav.toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 28px; margin: -32px auto 40px; max-width: 780px; box-shadow: 0 6px 24px rgba(0,0,0,.06); }
+  nav.toc h2 { font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; }
+  nav.toc ol { columns: 2; margin: 0; padding-left: 20px; }
+  nav.toc a { color: var(--text); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  section { margin: 56px 0; }
+  h2 { font-size: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
+  h3 { font-size: 1.15rem; margin-top: 28px; }
+  code, pre { background: #F1E9E4; border-radius: 6px; }
+  code { padding: 2px 6px; font-size: .9em; }
+  pre { padding: 14px 18px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: .95rem; }
+  th { color: var(--muted); font-weight: 600; }
+  .badge { display: inline-block; background: var(--primary); color: var(--primary-text); border-radius: 999px; padding: 3px 12px; font-size: .8rem; font-weight: 600; }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 20px; }
+  .gallery figure { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .gallery img { width: 100%; display: block; }
+  .gallery figcaption { padding: 10px 14px; font-size: .85rem; color: var(--muted); }
+  .callout { background: #FFF6EE; border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } nav.toc ol { columns: 1; } }
+  footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 40px 0 0; }
+  a { color: #A85220; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Reloop Resale</h1>
+  <p>A Shopify Online Store 2.0 theme built for resale, thrift, and trade-in stores — Documentation &amp; Setup Guide</p>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#included">What's included</a></li>
+    <li><a href="#screenshots">Screenshots</a></li>
+    <li><a href="#install">Installation</a></li>
+    <li><a href="#quickstart">Quick start</a></li>
+    <li><a href="#presets">Color presets</a></li>
+    <li><a href="#condition">Condition badges</a></li>
+    <li><a href="#structure">Theme structure</a></li>
+    <li><a href="#customizing">Customizing sections</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#support">Support &amp; license</a></li>
+    <li><a href="#changelog">Changelog</a></li>
+  </ol>
+</nav>
+
+<section id="included">
+  <h2>What's included</h2>
+  <p>Reloop Resale is a from-scratch Shopify theme purpose-built for stores
+  that resell goods — thrifted, pre-loved, refurbished, surplus, or
+  trade-in inventory — rather than sell new stock from a single brand.
+  It's built on Shopify's standard <strong>Online Store 2.0</strong>
+  architecture: JSON templates and Liquid sections/blocks, so every part of
+  every page is customizable from the theme editor with no code required.</p>
+  <div class="grid-2">
+    <div>
+      <h3>Resale-specific features</h3>
+      <ul>
+        <li>Condition badges (New / Like New / Good / Fair)</li>
+        <li>Authenticity guarantee badge &amp; info tab</li>
+        <li>"One of a kind" sold-out messaging</li>
+        <li>Automatic "Save X%" vs. retail price</li>
+        <li>"Sell with us" trade-in / consignment section</li>
+        <li>"How it works" step explainer</li>
+        <li>Trust badges, testimonials, brand marquee</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Store essentials</h3>
+      <ul>
+        <li>4 built-in color presets, switchable in one click</li>
+        <li>AJAX cart (drawer or page), no cart app needed</li>
+        <li>Responsive, mobile-first layout</li>
+        <li>WCAG AA-checked color contrast on every preset</li>
+        <li>No build step, no framework — plain Liquid/CSS/JS</li>
+        <li><code>shopify theme check</code> clean (0 offenses)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="screenshots">
+  <h2>Screenshots</h2>
+  <div class="gallery">
+    <figure><img src="screenshots/home-desktop.png" alt="Homepage, desktop"><figcaption>Homepage — desktop</figcaption></figure>
+    <figure><img src="screenshots/collection-desktop.png" alt="Collection page, desktop"><figcaption>Collection page — desktop</figcaption></figure>
+    <figure><img src="screenshots/product-desktop.png" alt="Product page, desktop"><figcaption>Product page — desktop</figcaption></figure>
+    <figure><img src="screenshots/home-mobile.png" alt="Homepage, mobile"><figcaption>Homepage — mobile</figcaption></figure>
+    <figure><img src="screenshots/collection-mobile.png" alt="Collection page, mobile"><figcaption>Collection page — mobile</figcaption></figure>
+    <figure><img src="screenshots/product-mobile.png" alt="Product page, mobile"><figcaption>Product page — mobile</figcaption></figure>
+  </div>
+  <p style="margin-top:14px; font-size:.85rem; color:var(--muted);">Screenshots are rendered from the theme's actual design system (Blush Bloom preset) using sample content.</p>
+</section>
+
+<section id="install">
+  <h2>Installation</h2>
+  <h3>Option A — Upload via Shopify Admin (no CLI needed)</h3>
+  <ol>
+    <li>In Shopify Admin, go to <strong>Online Store → Themes</strong>.</li>
+    <li>Click <strong>Add theme → Upload zip file</strong>.</li>
+    <li>Select the theme zip included in this download.</li>
+    <li>Once uploaded, click <strong>Actions → Preview</strong> to check it before publishing.</li>
+  </ol>
+  <h3>Option B — Shopify CLI (for developers)</h3>
+  <pre>shopify theme dev --store your-store.myshopify.com   # live local preview
+shopify theme push --store your-store.myshopify.com   # upload as a new theme</pre>
+  <div class="callout">Always install onto a <strong>duplicate or unpublished</strong> theme first, preview it, and only <strong>Publish</strong> once you're happy — this never touches your live storefront until you choose to.</div>
+</section>
+
+<section id="quickstart">
+  <h2>Quick start</h2>
+  <ol>
+    <li>Open the theme editor: theme card → <strong>Customize</strong>.</li>
+    <li>Pick a color preset under <strong>Theme settings → Colors</strong> (see <a href="#presets">Color presets</a>).</li>
+    <li>Upload your logo under <strong>Theme settings → Logo</strong>.</li>
+    <li>Fill in <strong>Theme settings → Resale settings</strong> — authenticity badge text, the "Sell with us" link, condition badge toggle.</li>
+    <li>Build your <strong>Main menu</strong> and <strong>Footer menu</strong> under Online Store → Navigation.</li>
+    <li>Tag your products with <code>condition:&lt;value&gt;</code> (see <a href="#condition">Condition badges</a>).</li>
+    <li>Preview on mobile using the toggle at the top of the theme editor, then <strong>Publish</strong>.</li>
+  </ol>
+</section>
+
+<section id="presets">
+  <h2>Color presets</h2>
+  <table>
+    <tr><th>Preset</th><th>Feel</th><th>Heading font</th><th>Corners</th></tr>
+    <tr><td>Blush Bloom <span class="badge">default</span></td><td>Warm, soft peach/blush</td><td>Work Sans</td><td>Soft</td></tr>
+    <tr><td>Forest Canopy</td><td>Earthy green, natural</td><td>Playfair Display</td><td>Soft</td></tr>
+    <tr><td>Slate Market</td><td>Cool blue-grey, modern</td><td>Montserrat</td><td>Sharp</td></tr>
+    <tr><td>Terracotta Bazaar</td><td>Warm clay/olive, artisan</td><td>Poppins</td><td>Extra soft</td></tr>
+  </table>
+  <p>Switch presets from the dropdown at the top of the theme editor's settings panel, or use one as a starting point and adjust individual colors below it — every color in the theme is its own color picker. All four presets pass WCAG AA contrast on every text/background pair (buttons, condition badges, footer, body copy).</p>
+</section>
+
+<section id="condition">
+  <h2>Condition badges</h2>
+  <p>Mark a product's condition one of two ways — the theme checks both automatically:</p>
+  <ol>
+    <li><strong>Product tag</strong> — add a tag like <code>condition:like-new</code> (also: <code>new</code>, <code>good</code>, <code>fair</code>, <code>deadstock</code>).</li>
+    <li><strong>Metafield</strong> — a <code>custom.condition</code> text metafield, for stores managing condition at scale.</li>
+  </ol>
+  <p>The matching badge then renders automatically on product cards, the product page, and cart line items. Colors/labels are editable under Theme settings, and badges can be turned off entirely.</p>
+</section>
+
+<section id="structure">
+  <h2>Theme structure</h2>
+  <pre>layout/theme.liquid          Base HTML shell
+config/settings_schema.json  Theme editor settings
+config/settings_data.json    Default values + presets
+locales/en.default.json      UI strings
+sections/                    Page sections (editable in theme editor)
+snippets/                    Reusable Liquid partials
+templates/                   JSON templates (home, product, collection, cart, ...)
+assets/                      CSS + JS (no build step, no framework)</pre>
+</section>
+
+<section id="customizing">
+  <h2>Customizing sections</h2>
+  <p>Every homepage section — hero banner, trust badges, featured collection,
+  how it works, brand marquee, sell-with-us, testimonials, newsletter — can
+  be added, removed, reordered, or hidden from the theme editor. Blocks
+  inside a section (e.g. individual trust badges or testimonials) work the
+  same way. No code changes are required for everyday content edits;
+  developers extending the theme's Liquid can find each section's file
+  under <code>sections/</code>, named to match what's shown in the editor.</p>
+</section>
+
+<section id="faq">
+  <h2>FAQ</h2>
+  <h3>Do I need any apps for the cart or badges to work?</h3>
+  <p>No — cart (drawer or page), condition badges, and trust badges are all built into the theme itself.</p>
+  <h3>Can I use my own categories?</h3>
+  <p>Yes — the theme has no hardcoded categories. Create Collections in Shopify Admin for whatever categories fit your inventory (Fashion, Electronics, Home, Art, etc.) and add them to your navigation.</p>
+  <h3>Does it support blog or customer account pages?</h3>
+  <p>The current version covers home, collection, product, cart, page, and search templates. Blog, article, and customer-account pages fall back to a generic layout until custom templates are added in a future update.</p>
+  <h3>Will it slow my store down?</h3>
+  <p>No build step, no external frameworks, no jQuery — just hand-written CSS/JS and Shopify's native responsive image and cart APIs.</p>
+</section>
+
+<section id="support">
+  <h2>Support &amp; license</h2>
+  <p>See <a href="LICENSE.md">LICENSE.md</a> included in this download for
+  full usage terms. Please review your purchase platform's messaging
+  system for how to reach support with questions.</p>
+</section>
+
+<section id="changelog">
+  <h2>Changelog</h2>
+  <p><strong>1.0.0</strong> — Initial release. Full Online Store 2.0 theme with resale features, 4 color presets, AJAX cart, WCAG AA-verified contrast, 0 <code>shopify theme check</code> offenses.</p>
+</section>
+
+<footer>
+  Reloop Resale — thank you for your purchase.
+</footer>
+
+</div>
+</body>
+</html>

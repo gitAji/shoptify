@@ -1,0 +1,49 @@
+<section class="search-page">
+  <div class="container">
+    <h1 class="search-page__title">
+      {%- if search.performed -%}
+        {%- if search.results_count == 1 -%}
+          {{ 'general.search.results_for_html' | t: count: search.results_count, terms: search.terms }}
+        {%- else -%}
+          {{ 'general.search.results_for_html_plural' | t: count: search.results_count, terms: search.terms }}
+        {%- endif -%}
+      {%- else -%}
+        {{ 'general.accessibility.search' | t }}
+      {%- endif -%}
+    </h1>
+
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search-page__form">
+      <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" aria-label="{{ 'general.search.placeholder' | t }}">
+      <input type="hidden" name="type" value="product">
+      <button type="submit" class="button button--primary">{{ 'general.search.submit' | t }}</button>
+    </form>
+
+    {%- if search.performed -%}
+      {%- if search.results.size == 0 -%}
+        <p class="empty-state">{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
+      {%- else -%}
+        <div class="product-grid product-grid--4-col">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}
+              <div class="product-grid__item">{% render 'product-card', product: item %}</div>
+            {%- else -%}
+              <div class="product-grid__item search-result-card">
+                <a href="{{ item.url }}">
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.content | strip_html | truncate: 120 }}</p>
+                </a>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Search page",
+  "settings": []
+}
+{% endschema %}

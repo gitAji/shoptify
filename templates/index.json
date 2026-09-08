@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "overlay_opacity": 25,
+        "content_position": "left",
+        "eyebrow": "Curated resale",
+        "heading": "Great finds. Second life.",
+        "text": "<p>Every piece is authenticated, inspected, and priced fairly — up to 70% off retail.</p>",
+        "button_label": "Shop new arrivals",
+        "button_link": "shopify://collections/all",
+        "button_label_2": "Sell your items",
+        "button_link_2": "shopify://pages/sell-with-us"
+      }
+    },
+    "trust": {
+      "type": "trust-badges",
+      "settings": {
+        "heading": "Buy secondhand with confidence"
+      },
+      "blocks": {
+        "badge-1": { "type": "badge", "settings": { "icon": "shield-check", "title": "Authenticated", "text": "Every item is inspected by our team before listing." } },
+        "badge-2": { "type": "badge", "settings": { "icon": "truck", "title": "Fast, tracked shipping", "text": "Most orders ship within 1-2 business days." } },
+        "badge-3": { "type": "badge", "settings": { "icon": "package", "title": "Easy 14-day returns", "text": "Not the right fit? Send it back, no questions asked." } },
+        "badge-4": { "type": "badge", "settings": { "icon": "recycle", "title": "Better for the planet", "text": "Buying resale keeps good things out of landfill." } }
+      },
+      "block_order": ["badge-1", "badge-2", "badge-3", "badge-4"]
+    },
+    "new-arrivals": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "New arrivals",
+        "subheading": "Just in — inspected, priced, and ready to ship.",
+        "products_to_show": 8,
+        "columns_desktop": "4"
+      }
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "settings": {
+        "heading": "Selling with us is simple",
+        "subheading": "Turn your closet or storeroom into cash in four easy steps."
+      }
+    },
+    "brands": {
+      "type": "brand-marquee",
+      "settings": {
+        "heading": "Brands we resell"
+      }
+    },
+    "sell-with-us": {
+      "type": "sell-with-us",
+      "settings": {
+        "eyebrow": "Have items to sell?",
+        "heading": "Turn your closet into cash",
+        "text": "<p>We handle the authentication, photography, listing, and shipping — you just send it in and get paid when it sells.</p>",
+        "button_label": "Start selling"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "heading": "Loved by resale shoppers"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Never miss a drop",
+        "text": "New arrivals land daily. Get first pick."
+      }
+    }
+  },
+  "order": ["hero", "trust", "new-arrivals", "how-it-works", "brands", "sell-with-us", "testimonials", "newsletter"]
+}

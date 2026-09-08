@@ -1,0 +1,40 @@
+{%- comment -%}
+  Renders a resale "condition" badge for a product.
+  Reads, in order: metafield custom.condition, then a product tag formatted
+  "condition:<value>" (e.g. "condition:like-new").
+  Usage: {% render 'condition-badge', product: product %}
+{%- endcomment -%}
+{%- liquid
+  assign condition = product.metafields.custom.condition.value
+  if condition == blank
+    for tag in product.tags
+      assign tag_down = tag | downcase
+      if tag_down contains 'condition:'
+        assign condition = tag | remove_first: 'condition:' | remove_first: 'Condition:' | strip
+      endif
+    endfor
+  endif
+-%}
+{%- if condition != blank -%}
+  {%- liquid
+    assign condition_handle = condition | handleize
+    case condition_handle
+      when 'new', 'new-with-tags', 'deadstock', 'nwt'
+        assign badge_color = settings.color_condition_new
+        assign badge_label = 'New'
+      when 'like-new', 'excellent'
+        assign badge_color = settings.color_condition_like_new
+        assign badge_label = 'Like New'
+      when 'good', 'gently-used'
+        assign badge_color = settings.color_condition_good
+        assign badge_label = 'Good'
+      when 'fair', 'well-loved'
+        assign badge_color = settings.color_condition_fair
+        assign badge_label = 'Fair'
+      else
+        assign badge_color = settings.color_condition_good
+        assign badge_label = condition
+    endcase
+  -%}
+  <span class="badge badge--condition" style="--badge-color: {{ badge_color }};">{{ badge_label }}</span>
+{%- endif -%}

@@ -1,0 +1,54 @@
+{%- comment -%}
+  Renders a product card for grids.
+  Usage: {% render 'product-card', product: product %}
+{%- endcomment -%}
+<div class="product-card">
+  <a href="{{ product.url }}" class="product-card__media-link" aria-label="{{ product.title | escape }}">
+    <div class="product-card__media">
+      {%- if product.featured_media -%}
+        {%- assign media_alt = product.featured_media.alt | default: product.title -%}
+        {{ product.featured_media | image_url: width: 700 | image_tag:
+          loading: 'lazy',
+          sizes: '(min-width: 990px) 23vw, (min-width: 750px) 31vw, 47vw',
+          widths: '350,450,550,700,900',
+          alt: media_alt,
+          class: 'product-card__image product-card__image--primary'
+        }}
+        {%- if product.media[1] -%}
+          {{ product.media[1] | image_url: width: 700 | image_tag:
+            loading: 'lazy',
+            sizes: '(min-width: 990px) 23vw, (min-width: 750px) 31vw, 47vw',
+            widths: '350,450,550,700,900',
+            alt: product.title,
+            class: 'product-card__image product-card__image--secondary'
+          }}
+        {%- endif -%}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'product-card__image product-card__placeholder' }}
+      {%- endif -%}
+
+      <div class="product-card__badges">
+        {%- if settings.show_condition_badges -%}
+          {% render 'condition-badge', product: product %}
+        {%- endif -%}
+        {%- if product.compare_at_price > product.price and settings.show_savings_badge -%}
+          {%- assign savings_pct = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+          <span class="badge badge--savings">-{{ savings_pct }}%</span>
+        {%- endif -%}
+      </div>
+
+      {%- unless product.available -%}
+        <span class="badge badge--sold-out">{{ 'products.product.sold_out' | t }}</span>
+      {%- endunless -%}
+    </div>
+  </a>
+  <div class="product-card__info">
+    {%- if product.vendor != blank -%}
+      <p class="product-card__vendor">{{ product.vendor }}</p>
+    {%- endif -%}
+    <h3 class="product-card__title">
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </h3>
+    {% render 'price', product: product %}
+  </div>
+</div>

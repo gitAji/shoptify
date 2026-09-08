@@ -1,0 +1,335 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Reloop Resale",
+    "theme_version": "1.0.0",
+    "theme_author": "Reloop",
+    "theme_documentation_url": "https://github.com/gitaji/shoptify",
+    "theme_support_url": "https://github.com/gitaji/shoptify/issues"
+  },
+  {
+    "name": "Logo",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 80,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Logo width",
+        "default": 140
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Base"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#FAF6EF"
+      },
+      {
+        "type": "color",
+        "id": "color_surface",
+        "label": "Card / surface background",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#1F2A22"
+      },
+      {
+        "type": "color",
+        "id": "color_text_muted",
+        "label": "Muted text",
+        "default": "#5C6B60"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Borders",
+        "default": "#E4DFD2"
+      },
+      {
+        "type": "header",
+        "content": "Brand"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary (buttons, links)",
+        "default": "#2B4736"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_text",
+        "label": "Text on primary",
+        "default": "#FAF6EF"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent (badges, highlights)",
+        "default": "#C97C3D"
+      },
+      {
+        "type": "color",
+        "id": "color_accent_text",
+        "label": "Text on accent",
+        "default": "#22160B"
+      },
+      {
+        "type": "header",
+        "content": "Condition badges"
+      },
+      {
+        "type": "color",
+        "id": "color_condition_new",
+        "label": "\"New / Deadstock\" badge",
+        "default": "#2B4736"
+      },
+      {
+        "type": "color",
+        "id": "color_condition_like_new",
+        "label": "\"Like New\" badge",
+        "default": "#3E6B52"
+      },
+      {
+        "type": "color",
+        "id": "color_condition_good",
+        "label": "\"Good\" badge",
+        "default": "#C97C3D"
+      },
+      {
+        "type": "color",
+        "id": "color_condition_fair",
+        "label": "\"Fair\" badge",
+        "default": "#A85B3E"
+      },
+      {
+        "type": "header",
+        "content": "Header & footer"
+      },
+      {
+        "type": "color",
+        "id": "color_header_background",
+        "label": "Header background",
+        "default": "#FAF6EF"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_background",
+        "label": "Footer background",
+        "default": "#1F2A22"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_text",
+        "label": "Footer text",
+        "default": "#FAF6EF"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Heading font",
+        "default": "work_sans_n7"
+      },
+      {
+        "type": "range",
+        "id": "font_heading_scale",
+        "min": 90,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "Heading size scale",
+        "default": 100
+      },
+      {
+        "type": "header",
+        "content": "Body"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body font",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "range",
+        "id": "font_body_scale",
+        "min": 90,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "Body size scale",
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      {
+        "type": "range",
+        "id": "page_width",
+        "min": 1000,
+        "max": 1600,
+        "step": 20,
+        "unit": "px",
+        "label": "Page width",
+        "default": 1280
+      },
+      {
+        "type": "range",
+        "id": "grid_spacing",
+        "min": 4,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "Grid spacing",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "corner_radius",
+        "min": 0,
+        "max": 24,
+        "step": 2,
+        "unit": "px",
+        "label": "Corner radius (cards, buttons)",
+        "default": 8
+      }
+    ]
+  },
+  {
+    "name": "Resale settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Condition & authenticity"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_condition_badges",
+        "label": "Show item condition badges",
+        "info": "Reads the product's \"Condition\" tag (e.g. condition_like-new) or metafield custom.condition.",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_authenticity_badge",
+        "label": "Show authenticity guarantee badge on product pages",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "authenticity_badge_text",
+        "label": "Authenticity badge text",
+        "default": "Authenticated & inspected"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_one_of_one_notice",
+        "label": "Show \"one-of-a-kind, once it's gone it's gone\" notice when a variant sells out",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Savings messaging"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_savings_badge",
+        "label": "Show \"Save X%\" badge when compare-at price is set",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "compare_at_price_label",
+        "label": "Original price label",
+        "default": "Retail price"
+      },
+      {
+        "type": "header",
+        "content": "Sell / trade-in"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sell_with_us",
+        "label": "Show \"Sell with us\" section on home page",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "sell_with_us_link",
+        "label": "\"Start selling\" link",
+        "info": "e.g. link to a page or an external intake form"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart_type",
+        "label": "Cart type",
+        "options": [
+          { "value": "drawer", "label": "Drawer" },
+          { "value": "page", "label": "Page" }
+        ],
+        "default": "drawer"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_show_note",
+        "label": "Show order note field in cart",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "cart_resale_notice",
+        "label": "Resale reassurance note shown in cart",
+        "default": "<p>Every item is inspected before it ships. Because most pieces are one-of-a-kind, availability isn't guaranteed until checkout is complete.</p>"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      { "type": "url", "id": "social_instagram_link", "label": "Instagram" },
+      { "type": "url", "id": "social_tiktok_link", "label": "TikTok" },
+      { "type": "url", "id": "social_facebook_link", "label": "Facebook" },
+      { "type": "url", "id": "social_pinterest_link", "label": "Pinterest" },
+      { "type": "url", "id": "social_x_link", "label": "X (Twitter)" }
+    ]
+  }
+]

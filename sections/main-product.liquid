@@ -1,0 +1,150 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+<section class="product" data-product-section>
+  <div class="container product__inner">
+    <div class="product__gallery">
+      <div class="product__gallery-main">
+        {%- if product.media.size > 0 -%}
+          {%- for media in product.media -%}
+            {%- liquid
+              if forloop.first
+                assign loading_strategy = 'eager'
+              else
+                assign loading_strategy = 'lazy'
+              endif
+              assign media_alt = media.alt | default: product.title
+            -%}
+            <div class="product__gallery-image{% if forloop.first %} is-active{% endif %}" data-media-id="{{ media.id }}">
+              {{ media | image_url: width: 1200 | image_tag: loading: loading_strategy, sizes: '(min-width: 990px) 50vw, 100vw', widths: '400,700,1000,1200', alt: media_alt }}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'product__gallery-image placeholder' }}
+        {%- endif -%}
+      </div>
+      {%- if product.media.size > 1 -%}
+        <div class="product__gallery-thumbs">
+          {%- for media in product.media -%}
+            {%- assign media_alt = media.alt | default: product.title -%}
+            <button type="button" class="product__gallery-thumb{% if forloop.first %} is-active{% endif %}" data-thumb-for="{{ media.id }}" aria-label="{{ 'products.product.view_details' | t }}">
+              {{ media | image_url: width: 200 | image_tag: loading: 'lazy', alt: media_alt }}
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="product__info">
+      {%- if product.vendor != blank -%}<p class="product__vendor">{{ product.vendor }}</p>{%- endif -%}
+      <h1 class="product__title">{{ product.title }}</h1>
+
+      <div class="product__badges">
+        {%- if settings.show_condition_badges -%}
+          {% render 'condition-badge', product: product %}
+        {%- endif -%}
+        {%- if settings.show_authenticity_badge -%}
+          <span class="badge badge--authenticity">{% render 'icon', name: 'shield-check', size: 14 %} {{ settings.authenticity_badge_text }}</span>
+        {%- endif -%}
+      </div>
+
+      <div data-product-price>{% render 'price', product: product, variant: current_variant %}</div>
+
+      {%- if settings.show_one_of_one_notice and product.variants.size == 1 -%}
+        <p class="product__one-of-one" data-one-of-one{% if current_variant.available %} hidden{% endif %}>
+          {% render 'icon', name: 'tag', size: 14 %} {{ 'products.product.one_of_one' | t }}
+        </p>
+      {%- endif -%}
+
+      <product-form class="product-form">
+        <form method="post" action="{{ routes.cart_add_url }}" data-product-form>
+          <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-id>
+
+          {%- unless product.has_only_default_variant -%}
+            {%- for option in product.options_with_values -%}
+              <fieldset class="product-form__option" data-option-position="{{ option.position }}">
+                <legend>{{ option.name }}</legend>
+                <div class="product-form__values">
+                  {%- for value in option.values -%}
+                    <label class="product-form__value">
+                      <input
+                        type="radio"
+                        name="option-{{ option.position }}"
+                        value="{{ value | escape }}"
+                        data-option-selector
+                        {% if option.selected_value == value %}checked{% endif %}
+                      >
+                      <span>{{ value }}</span>
+                    </label>
+                  {%- endfor -%}
+                </div>
+              </fieldset>
+            {%- endfor -%}
+          {%- endunless -%}
+
+          <div class="product-form__quantity">
+            <label for="quantity">{{ 'products.product.quantity' | t }}</label>
+            <div class="quantity">
+              <button type="button" class="quantity__button" data-quantity-decrease aria-label="{{ 'general.accessibility.decrease_quantity' | t }}">{% render 'icon', name: 'minus', size: 14 %}</button>
+              <input type="number" id="quantity" name="quantity" class="quantity__input" value="1" min="1">
+              <button type="button" class="quantity__button" data-quantity-increase aria-label="{{ 'general.accessibility.increase_quantity' | t }}">{% render 'icon', name: 'plus', size: 14 %}</button>
+            </div>
+          </div>
+
+          <button type="submit" class="button button--primary button--full" data-add-to-cart {% unless current_variant.available %}disabled{% endunless %}>
+            <span data-add-to-cart-text>
+              {%- if current_variant.available -%}{{ 'products.product.add_to_cart' | t }}{%- else -%}{{ 'products.product.sold_out' | t }}{%- endif -%}
+            </span>
+          </button>
+        </form>
+      </product-form>
+
+      <div class="product__accordion">
+        {%- if product.description != blank -%}
+          <details class="accordion" open>
+            <summary>{{ 'products.product.description' | t }}</summary>
+            <div class="accordion__content">{{ product.description }}</div>
+          </details>
+        {%- endif -%}
+        {%- if settings.show_authenticity_badge -%}
+          <details class="accordion">
+            <summary>{{ 'products.product.authenticity' | t }}</summary>
+            <div class="accordion__content">
+              <p>{{ settings.authenticity_badge_text }}. Every item passes a multi-point inspection covering material, function, and condition before it's listed. If anything doesn't match the listing, we'll make it right.</p>
+            </div>
+          </details>
+        {%- endif -%}
+        <details class="accordion">
+          <summary>{{ 'products.product.shipping_and_returns' | t }}</summary>
+          <div class="accordion__content">
+            <p>{{ section.settings.shipping_returns_text }}</p>
+          </div>
+        </details>
+      </div>
+
+      <dl class="product__meta">
+        {%- if product.vendor != blank -%}
+          <div><dt>{{ 'products.product.brand' | t }}</dt><dd>{{ product.vendor }}</dd></div>
+        {%- endif -%}
+        <div><dt>{{ 'products.product.sku' | t }}</dt><dd data-product-sku>{{ current_variant.sku }}</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <script type="application/json" data-product-json>
+    {{ product | json }}
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Product information",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "shipping_returns_text",
+      "label": "Shipping & returns text",
+      "default": "Ships within 1-2 business days. Returns accepted within 14 days of delivery for store credit or a refund, provided the item is unworn and in its original condition."
+    }
+  ]
+}
+{% endschema %}

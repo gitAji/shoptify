@@ -1,5 +1,9 @@
 # Reloop Resale — a Shopify Online Store 2.0 theme for reselling
 
+> **Store owner, not a developer?** Read the [Store Owner's Guide](docs/USER-GUIDE.md)
+> instead — it covers going live, customizing colors/categories/condition
+> badges, and FAQs, with no code.
+
 A from-scratch Shopify theme built for stores that **resell** goods — thrifted,
 pre-loved, refurbished, surplus, or trade-in inventory — rather than sell new
 stock from a single brand. It's built on the standard Online Store 2.0
@@ -166,6 +170,40 @@ Shopify store.
    Navigation** — the header/footer sections read them automatically.
 5. Tag or add the `custom.condition` metafield to your products so
    condition badges populate.
+
+## Performance, accessibility & Online Store 2.0 compliance
+
+Reviewed against Shopify's theme requirements and tested locally with
+`shopify theme check` (0 offenses) plus manual review:
+
+- **Online Store 2.0 architecture** — every template is a JSON template
+  (`templates/*.json`), every section supports the theme editor's add/
+  remove/reorder, and repeatable content (badges, steps, testimonials,
+  brands, menu blocks) is implemented as **blocks**, not hardcoded markup —
+  merchants can add/remove/reorder blocks per section without code.
+- **No build step, no framework** — `assets/*.js` are hand-written vanilla
+  JS, `base.css` is hand-written CSS. No bundler, no runtime dependency to
+  fetch, nothing to go stale or break a deploy.
+- **Performance** — no external font/script CDNs beyond Shopify's own
+  `font_picker` fonts (self-hosted by Shopify); no jQuery or other heavy
+  libraries; images use Shopify's `image_url`/`srcset` responsive image
+  helpers so phones don't download desktop-sized images; JS is deferred and
+  scoped to progressive enhancement (cart/product-form work is done via
+  small `fetch` calls against Shopify's own `/cart/*.js` endpoints, not a
+  cart app).
+- **Accessibility** — every interactive element (menu toggles, cart drawer,
+  accordions, quantity steppers) is a real `<button>`/`<a>` with visible
+  focus states and `aria-*` attributes for expanded/collapsed state; images
+  require alt text via Shopify's native alt-text field; every color preset
+  (see [§3 of the Store Owner's Guide](docs/USER-GUIDE.md#3-choosing-a-color-style))
+  was checked against WCAG AA contrast thresholds (4.5:1 for body text, 3:1
+  for large/muted text) using the relative-luminance formula across every
+  text/background pair the theme defines — buttons, all four condition
+  badges, footer, and body copy.
+- **Fully responsive** — layout uses CSS Grid/Flexbox with fluid units and
+  breakpoints tested at common phone/tablet/desktop widths; no
+  horizontally-scrolling content outside intentionally scrollable strips
+  (brand marquee); the mobile nav collapses into a drawer menu.
 
 ## Known limitations / next steps
 

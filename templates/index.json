@@ -40,7 +40,7 @@
       "type": "how-it-works",
       "settings": {
         "heading": "Selling with us is simple",
-        "subheading": "Turn your closet or storeroom into cash in four easy steps."
+        "subheading": "Turn what you don't need into cash in four easy steps."
       }
     },
     "brands": {
@@ -53,7 +53,7 @@
       "type": "sell-with-us",
       "settings": {
         "eyebrow": "Have items to sell?",
-        "heading": "Turn your closet into cash",
+        "heading": "Turn what you don't need into cash",
         "text": "<p>We handle the authentication, photography, listing, and shipping — you just send it in and get paid when it sells.</p>",
         "button_label": "Start selling"
       }

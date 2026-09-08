@@ -98,6 +98,29 @@ Recognized values map to badge colors/labels: `new` / `deadstock` → **New**,
 else is shown as-is with the "Good" color. Toggle badges off entirely under
 **Theme settings → Resale settings**.
 
+## Colors and categories are merchant-customizable
+
+- **Colors** — every color in the theme (background, surface, text, primary/
+  accent buttons, all four condition badge colors, header, footer) is a color
+  picker under **Theme settings → Colors** in the theme editor. No code
+  changes needed to reskin the store.
+- **Categories** — the theme itself has no hardcoded product categories.
+  Collections, their names, and the storefront navigation are all created and
+  edited in Shopify Admin (**Products → Collections**, **Online Store →
+  Navigation**); the same `collection.json` template renders any of them. The
+  `static-preview/` mockup demonstrates this with a catalog spanning five of
+  Shopify's own top-level store categories (per its
+  [Standard Product Taxonomy](https://shopify.github.io/product-taxonomy/) and
+  the niches Shopify itself calls out as most popular): **Fashion & Apparel,
+  Electronics & Phone Accessories, Grocery & Food, Art & Prints, and Others**.
+  The condition-grading and authenticity-guarantee framing fits secondhand/
+  graded goods well — apparel, refurbished electronics, and collectible art/
+  prints all commonly grade condition the way this theme does. It's a poorer
+  fit for **Grocery**, which isn't normally "condition graded" — the sample
+  grocery products lean on a real, adjacent resale model instead (surplus/
+  overstock sealed goods, always graded "New") rather than pretending
+  perishable groceries have a wear-and-tear condition.
+
 ## Cart
 
 Two cart types are supported via **Theme settings → Cart → Cart type**:

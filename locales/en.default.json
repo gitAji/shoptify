@@ -1,0 +1,97 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "close": "Close",
+      "menu": "Menu",
+      "search": "Search",
+      "increase_quantity": "Increase quantity",
+      "decrease_quantity": "Decrease quantity"
+    },
+    "search": {
+      "placeholder": "Search for brands, items, categories...",
+      "submit": "Search",
+      "no_results_html": "No results found for \"{{ terms }}\". Try a different brand, category, or keyword.",
+      "results_for_html": "{{ count }} result for \"{{ terms }}\"",
+      "results_for_html_plural": "{{ count }} results for \"{{ terms }}\""
+    },
+    "404": {
+      "title": "Page not found",
+      "subtext": "This item may have already sold, or the page has moved.",
+      "link": "Continue shopping"
+    },
+    "newsletter": {
+      "email_placeholder": "Your email address",
+      "submit": "Subscribe",
+      "success": "Thanks for subscribing!"
+    },
+    "continue_shopping": "Continue shopping"
+  },
+  "products": {
+    "product": {
+      "sold_out": "Sold out",
+      "one_of_one": "One-of-a-kind piece — once it's gone, it's gone.",
+      "add_to_cart": "Add to cart",
+      "unavailable": "Unavailable",
+      "quantity": "Quantity",
+      "size": "Size",
+      "condition": "Condition",
+      "sku": "SKU",
+      "brand": "Brand",
+      "description": "Description",
+      "shipping_and_returns": "Shipping & returns",
+      "authenticity": "Authenticity guarantee",
+      "regular_price": "Regular price",
+      "sale_price": "Sale price",
+      "save_amount": "Save {{ amount }}",
+      "save_percentage": "Save {{ percentage }}%",
+      "view_details": "View details"
+    }
+  },
+  "collections": {
+    "general": {
+      "no_matches": "No items match your filters.",
+      "clear_filters": "Clear all",
+      "items_count": "{{ count }} item",
+      "items_count_plural": "{{ count }} items",
+      "sort_by": "Sort by",
+      "filter_by": "Filter"
+    },
+    "sorting": {
+      "manual": "Featured",
+      "best_selling": "Best selling",
+      "title_ascending": "Alphabetically, A-Z",
+      "title_descending": "Alphabetically, Z-A",
+      "price_ascending": "Price, low to high",
+      "price_descending": "Price, high to low",
+      "created_descending": "Newest arrivals",
+      "created_ascending": "Oldest arrivals"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your bag",
+      "empty": "Your bag is empty",
+      "empty_link": "Keep browsing",
+      "subtotal": "Subtotal",
+      "checkout": "Checkout",
+      "remove": "Remove",
+      "note": "Order note",
+      "update": "Update",
+      "view_cart": "View bag"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "My account",
+      "details": "Account details",
+      "orders": "Order history",
+      "log_out": "Log out"
+    },
+    "log_in": {
+      "title": "Log in",
+      "submit": "Log in",
+      "forgot_password": "Forgot your password?"
+    }
+  }
+}

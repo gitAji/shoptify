@@ -1,0 +1,86 @@
+<aside id="cart-drawer" class="cart-drawer" aria-hidden="true" aria-label="{{ 'cart.general.title' | t }}">
+  <div class="cart-drawer__overlay" data-cart-drawer-close></div>
+  <div class="cart-drawer__panel" role="dialog" aria-modal="true">
+    <header class="cart-drawer__header">
+      <h2 class="cart-drawer__title">{{ 'cart.general.title' | t }} <span class="cart-drawer__count">({{ cart.item_count }})</span></h2>
+      <button type="button" class="icon-button" data-cart-drawer-close aria-label="{{ 'general.accessibility.close' | t }}">
+        {% render 'icon', name: 'close', size: 18 %}
+      </button>
+    </header>
+
+    <div class="cart-drawer__body" data-cart-drawer-body>
+      {%- if cart.item_count == 0 -%}
+        <div class="cart-drawer__empty">
+          <p>{{ 'cart.general.empty' | t }}</p>
+          <a href="{{ routes.all_products_collection_url }}" class="button button--primary" data-cart-drawer-close>{{ 'cart.general.empty_link' | t }}</a>
+        </div>
+      {%- else -%}
+        <ul class="cart-drawer__items">
+          {%- for line in cart.items -%}
+            <li class="cart-line" data-cart-line="{{ forloop.index }}">
+              <a href="{{ line.url }}" class="cart-line__image-link">
+                {%- if line.image -%}
+                  {%- assign line_image_alt = line.image.alt | default: line.title -%}
+                  {{ line.image | image_url: width: 200 | image_tag: loading: 'lazy', alt: line_image_alt, class: 'cart-line__image' }}
+                {%- endif -%}
+              </a>
+              <div class="cart-line__details">
+                {%- if line.product.vendor != blank -%}<p class="cart-line__vendor">{{ line.product.vendor }}</p>{%- endif -%}
+                <a href="{{ line.url }}" class="cart-line__title">{{ line.product.title }}</a>
+                {%- unless line.product.has_only_default_variant -%}
+                  <p class="cart-line__variant">{{ line.variant.title }}</p>
+                {%- endunless -%}
+                {%- if settings.show_condition_badges -%}
+                  {% render 'condition-badge', product: line.product %}
+                {%- endif -%}
+                <div class="cart-line__price-row">
+                  <div class="cart-line__quantity" role="group" aria-label="{{ 'products.product.quantity' | t }}">
+                    <button type="button" class="quantity__button" data-cart-quantity-decrease data-line="{{ forloop.index }}" aria-label="{{ 'general.accessibility.decrease_quantity' | t }}">
+                      {% render 'icon', name: 'minus', size: 14 %}
+                    </button>
+                    <input type="number" class="quantity__input" min="0" value="{{ line.quantity }}" data-cart-quantity-input data-line="{{ forloop.index }}" aria-label="{{ 'products.product.quantity' | t }}">
+                    <button type="button" class="quantity__button" data-cart-quantity-increase data-line="{{ forloop.index }}" aria-label="{{ 'general.accessibility.increase_quantity' | t }}">
+                      {% render 'icon', name: 'plus', size: 14 %}
+                    </button>
+                  </div>
+                  <span class="cart-line__final-price">{{ line.final_line_price | money }}</span>
+                </div>
+              </div>
+              <button type="button" class="cart-line__remove icon-button" data-cart-remove data-line="{{ forloop.index }}" aria-label="{{ 'cart.general.remove' | t }}">
+                {% render 'icon', name: 'close', size: 14 %}
+              </button>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    {%- if cart.item_count > 0 -%}
+      <footer class="cart-drawer__footer">
+        {%- if settings.cart_resale_notice != blank -%}
+          <div class="cart-drawer__notice">{{ settings.cart_resale_notice }}</div>
+        {%- endif -%}
+        {%- if settings.cart_show_note -%}
+          <details class="cart-drawer__note">
+            <summary>{{ 'cart.general.note' | t }}</summary>
+            <textarea name="note" form="cart-drawer-form" data-cart-note placeholder="{{ 'cart.general.note' | t }}">{{ cart.note }}</textarea>
+          </details>
+        {%- endif -%}
+        <div class="cart-drawer__subtotal-row">
+          <span>{{ 'cart.general.subtotal' | t }}</span>
+          <span class="cart-drawer__subtotal" data-cart-subtotal>{{ cart.total_price | money }}</span>
+        </div>
+        <form action="{{ routes.cart_url }}" method="post" id="cart-drawer-form">
+          <button type="submit" name="checkout" class="button button--primary button--full">{{ 'cart.general.checkout' | t }}</button>
+        </form>
+      </footer>
+    {%- endif -%}
+  </div>
+</aside>
+
+{% schema %}
+{
+  "name": "Cart drawer",
+  "settings": []
+}
+{% endschema %}

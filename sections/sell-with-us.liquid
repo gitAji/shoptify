@@ -1,0 +1,42 @@
+{%- if settings.show_sell_with_us -%}
+<section class="sell-with-us">
+  <div class="container sell-with-us__inner">
+    <div class="sell-with-us__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="sell-with-us__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="sell-with-us__heading">{{ section.settings.heading }}</h2>
+      <div class="sell-with-us__text">{{ section.settings.text }}</div>
+      {%- assign cta_url = settings.sell_with_us_link | default: section.settings.button_link -%}
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ cta_url | default: '#' }}" class="button button--accent">{{ section.settings.button_label }}</a>
+      {%- endif -%}
+    </div>
+    <div class="sell-with-us__media">
+      {%- if section.settings.image != blank -%}
+        {%- assign sell_with_us_alt = section.settings.heading | escape -%}
+        {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 45vw, 90vw', widths: '400,700,1000,1200', alt: sell_with_us_alt }}
+      {%- else -%}
+        {{ 'lifestyle-2' | placeholder_svg_tag: 'sell-with-us__placeholder' }}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Sell with us",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Have items to sell?" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Turn your closet into cash" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>We handle the authentication, photography, listing, and shipping — you just send it in and get paid when it sells.</p>" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Start selling" },
+    { "type": "url", "id": "button_link", "label": "Button link (used if no global link is set)" }
+  ],
+  "presets": [
+    { "name": "Sell with us" }
+  ]
+}
+{% endschema %}

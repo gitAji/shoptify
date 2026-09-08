@@ -1,0 +1,61 @@
+<section class="brand-marquee">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <p class="brand-marquee__heading">{{ section.settings.heading }}</p>
+    {%- endif -%}
+  </div>
+  <div class="brand-marquee__track" aria-hidden="{% if section.blocks.size == 0 %}true{% else %}false{% endif %}">
+    <div class="brand-marquee__list">
+      {%- for block in section.blocks -%}
+        <span class="brand-marquee__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.logo != blank -%}
+            {{ block.settings.logo | image_url: width: 200 | image_tag: loading: 'lazy', alt: block.settings.name, class: 'brand-marquee__logo' }}
+          {%- else -%}
+            {{ block.settings.name }}
+          {%- endif -%}
+        </span>
+      {%- endfor -%}
+    </div>
+    <div class="brand-marquee__list" aria-hidden="true">
+      {%- for block in section.blocks -%}
+        <span class="brand-marquee__item">
+          {%- if block.settings.logo != blank -%}
+            {{ block.settings.logo | image_url: width: 200 | image_tag: loading: 'lazy', alt: '', class: 'brand-marquee__logo' }}
+          {%- else -%}
+            {{ block.settings.name }}
+          {%- endif -%}
+        </span>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brand marquee",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Brands we resell" }
+  ],
+  "blocks": [
+    {
+      "type": "brand",
+      "name": "Brand",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Brand name", "default": "Brand name" },
+        { "type": "image_picker", "id": "logo", "label": "Logo (optional)" }
+      ]
+    }
+  ],
+  "max_blocks": 16,
+  "default": {
+    "blocks": [
+      { "type": "brand", "settings": { "name": "Patagonia" } },
+      { "type": "brand", "settings": { "name": "Levi's" } },
+      { "type": "brand", "settings": { "name": "Nike" } },
+      { "type": "brand", "settings": { "name": "Carhartt" } },
+      { "type": "brand", "settings": { "name": "The North Face" } },
+      { "type": "brand", "settings": { "name": "Coach" } }
+    ]
+  }
+}
+{% endschema %}

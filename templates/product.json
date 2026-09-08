@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "shipping_returns_text": "Ships within 1-2 business days. Returns accepted within 14 days of delivery for store credit or a refund, provided the item is unworn and in its original condition."
+      }
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "settings": {
+        "heading": "Selling with us is simple",
+        "subheading": "Turn your closet or storeroom into cash in four easy steps."
+      }
+    }
+  },
+  "order": ["main", "how-it-works"]
+}

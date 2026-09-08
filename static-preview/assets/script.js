@@ -14,7 +14,12 @@
     bag: '<path d="M6 8h12l1 13H5z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
     dress: '<path d="M9 2h6l1 5-2 1 3 13H7l3-13-2-1z"/>',
     shirt: '<path d="m8 3 4 2 4-2 4 4-3 3v10H7V10L4 7z"/>',
-    hanger: '<path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7l7.94 5.3a2 2 0 0 1 .89 1.98L21 17H3l.17-2.72a2 2 0 0 1 .89-1.98L12 7V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2Z"/>'
+    hanger: '<path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7l7.94 5.3a2 2 0 0 1 .89 1.98L21 17H3l.17-2.72a2 2 0 0 1 .89-1.98L12 7V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2Z"/>',
+    headphones: '<path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="17" y="14" width="4" height="6" rx="1.5"/><rect x="3" y="14" width="4" height="6" rx="1.5"/>',
+    jar: '<path d="M8 2h8l1 3H7l1-3z"/><path d="M6.5 5h11L19 20a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L6.5 5z"/><line x1="6" y1="11" x2="18" y2="11"/>',
+    frame: '<rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5-4 4-3-3-6 6"/>',
+    lamp: '<path d="M9 2h6l3 8H6l3-8z"/><line x1="12" y1="10" x2="12" y2="17"/><path d="M9 22h6"/><path d="M10 17h4l1.5 5h-7L10 17z"/>',
+    book: '<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"/><path d="M20 19H6.5a2.5 2.5 0 0 0 0 5H20"/>'
   };
 
   function iconSvg(name, size) {
@@ -27,20 +32,38 @@
   }
   window.ReloopPlaceholder = placeholder;
 
-  /* ---------- Sample product catalog ---------- */
+  /* ---------- Sample product catalog ----------
+     Categories follow Shopify's own top-level store categories (per its
+     Standard Product Taxonomy and the niches Shopify itself calls out as
+     most popular: Apparel & Accessories, Electronics, Food/Beverages,
+     Arts & Entertainment, plus a catch-all) rather than clothing-only
+     subcategories, so the catalog demonstrates a general marketplace. */
   var PRODUCTS = [
-    { id: 'p1', title: "Patagonia Better Sweater Fleece", vendor: 'Patagonia', category: 'Outerwear', condition: 'like-new', price: 58, compareAt: 139, icon: 'jacket', ph: 'ph-1', featured: true },
-    { id: 'p2', title: "Levi's 501 Original Straight Jeans", vendor: "Levi's", category: 'Denim', condition: 'good', price: 34, compareAt: 98, icon: 'pants', ph: 'ph-4', featured: true },
-    { id: 'p3', title: 'Nike Air Max 90 Sneakers', vendor: 'Nike', category: 'Footwear', condition: 'like-new', price: 62, compareAt: 130, icon: 'shoe', ph: 'ph-3', featured: true },
-    { id: 'p4', title: 'Coach Leather Crossbody Bag', vendor: 'Coach', category: 'Bags', condition: 'good', price: 89, compareAt: 295, icon: 'bag', ph: 'ph-6', featured: true },
-    { id: 'p5', title: 'The North Face Nuptse Puffer', vendor: 'The North Face', category: 'Outerwear', condition: 'fair', price: 72, compareAt: 220, icon: 'jacket', ph: 'ph-1', featured: true },
-    { id: 'p6', title: 'Carhartt Workwear Chore Coat', vendor: 'Carhartt', category: 'Outerwear', condition: 'good', price: 54, compareAt: 150, icon: 'jacket', ph: 'ph-2', featured: true },
-    { id: 'p7', title: 'Vintage Wrangler Denim Jacket', vendor: 'Wrangler', category: 'Denim', condition: 'fair', price: 40, compareAt: 95, icon: 'jacket', ph: 'ph-4', featured: true, soldOut: true, oneOfOne: true },
-    { id: 'p8', title: 'Reformation Floral Midi Dress', vendor: 'Reformation', category: 'Dresses', condition: 'new', price: 48, compareAt: 128, icon: 'dress', ph: 'ph-5', featured: true },
-    { id: 'p9', title: "Dr. Martens 1460 Boots", vendor: 'Dr. Martens', category: 'Footwear', condition: 'good', price: 58, compareAt: 170, icon: 'shoe', ph: 'ph-3' },
-    { id: 'p10', title: 'Burberry Wool Scarf', vendor: 'Burberry', category: 'Accessories', condition: 'like-new', price: 65, compareAt: 220, icon: 'shirt', ph: 'ph-6' },
-    { id: 'p11', title: 'Patagonia Down Vest', vendor: 'Patagonia', category: 'Outerwear', condition: 'new', price: 61, compareAt: 149, icon: 'jacket', ph: 'ph-1' },
-    { id: 'p12', title: 'Madewell High-Rise Jeans', vendor: 'Madewell', category: 'Denim', condition: 'like-new', price: 32, compareAt: 88, icon: 'pants', ph: 'ph-4' }
+    { id: 'p1', title: "Patagonia Better Sweater Fleece", vendor: 'Patagonia', category: 'Fashion & Apparel', condition: 'like-new', price: 58, compareAt: 139, icon: 'jacket', ph: 'ph-1', featured: true },
+    { id: 'p2', title: "Levi's 501 Original Straight Jeans", vendor: "Levi's", category: 'Fashion & Apparel', condition: 'good', price: 34, compareAt: 98, icon: 'pants', ph: 'ph-4' },
+    { id: 'p3', title: 'Nike Air Max 90 Sneakers', vendor: 'Nike', category: 'Fashion & Apparel', condition: 'like-new', price: 62, compareAt: 130, icon: 'shoe', ph: 'ph-3', featured: true },
+    { id: 'p4', title: 'Coach Leather Crossbody Bag', vendor: 'Coach', category: 'Fashion & Apparel', condition: 'good', price: 89, compareAt: 295, icon: 'bag', ph: 'ph-6' },
+    { id: 'p5', title: 'The North Face Nuptse Puffer', vendor: 'The North Face', category: 'Fashion & Apparel', condition: 'fair', price: 72, compareAt: 220, icon: 'jacket', ph: 'ph-1', featured: true },
+    { id: 'p6', title: 'Carhartt Workwear Chore Coat', vendor: 'Carhartt', category: 'Fashion & Apparel', condition: 'good', price: 54, compareAt: 150, icon: 'jacket', ph: 'ph-2' },
+    { id: 'p7', title: 'Vintage Wrangler Denim Jacket', vendor: 'Wrangler', category: 'Fashion & Apparel', condition: 'fair', price: 40, compareAt: 95, icon: 'jacket', ph: 'ph-4', soldOut: true, oneOfOne: true },
+    { id: 'p8', title: 'Reformation Floral Midi Dress', vendor: 'Reformation', category: 'Fashion & Apparel', condition: 'new', price: 48, compareAt: 128, icon: 'dress', ph: 'ph-5', featured: true },
+    { id: 'p9', title: "Dr. Martens 1460 Boots", vendor: 'Dr. Martens', category: 'Fashion & Apparel', condition: 'good', price: 58, compareAt: 170, icon: 'shoe', ph: 'ph-3' },
+    { id: 'p10', title: 'Burberry Wool Scarf', vendor: 'Burberry', category: 'Fashion & Apparel', condition: 'like-new', price: 65, compareAt: 220, icon: 'shirt', ph: 'ph-6' },
+    { id: 'p11', title: 'Patagonia Down Vest', vendor: 'Patagonia', category: 'Fashion & Apparel', condition: 'new', price: 61, compareAt: 149, icon: 'jacket', ph: 'ph-1' },
+    { id: 'p12', title: 'Madewell High-Rise Jeans', vendor: 'Madewell', category: 'Fashion & Apparel', condition: 'like-new', price: 32, compareAt: 88, icon: 'pants', ph: 'ph-4' },
+
+    { id: 'p13', title: 'AirPods Pro (2nd Gen) — Refurbished', vendor: 'Apple', category: 'Electronics & Phone Accessories', condition: 'like-new', price: 89, compareAt: 249, icon: 'headphones', ph: 'ph-3', featured: true },
+    { id: 'p14', title: 'iPhone 13 Silicone Case — Open Box', vendor: 'Apple', category: 'Electronics & Phone Accessories', condition: 'new', price: 15, compareAt: 49, icon: 'headphones', ph: 'ph-6' },
+    { id: 'p15', title: 'Sony WH-1000XM4 Headphones', vendor: 'Sony', category: 'Electronics & Phone Accessories', condition: 'good', price: 118, compareAt: 350, icon: 'headphones', ph: 'ph-3' },
+
+    { id: 'p16', title: 'Overstock Specialty Olive Oil Gift Set', vendor: 'Local Pantry Co.', category: 'Grocery & Food', condition: 'new', price: 18, compareAt: 45, icon: 'jar', ph: 'ph-5' },
+    { id: 'p17', title: 'Surplus Artisan Coffee Beans (Bulk Bag)', vendor: 'Roast Collective', category: 'Grocery & Food', condition: 'new', price: 12, compareAt: 28, icon: 'jar', ph: 'ph-4', featured: true },
+
+    { id: 'p18', title: 'Vintage Botanical Print, Framed', vendor: 'Estate Find', category: 'Art & Prints', condition: 'good', price: 22, compareAt: 60, icon: 'frame', ph: 'ph-2', featured: true },
+    { id: 'p19', title: 'Signed Concert Poster — 1998 Tour', vendor: 'Estate Find', category: 'Art & Prints', condition: 'fair', price: 35, compareAt: 90, icon: 'frame', ph: 'ph-1', soldOut: true, oneOfOne: true },
+
+    { id: 'p20', title: 'Ceramic Table Lamp', vendor: 'Home Studio', category: 'Others', condition: 'like-new', price: 28, compareAt: 75, icon: 'lamp', ph: 'ph-5', featured: true },
+    { id: 'p21', title: 'Hardcover Novel Set (3 books)', vendor: 'Reader’s Corner', category: 'Others', condition: 'good', price: 14, compareAt: 40, icon: 'book', ph: 'ph-6' }
   ];
   window.ReloopProducts = PRODUCTS;
 

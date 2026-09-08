@@ -3,22 +3,22 @@
    default values in place of Liquid-generated settings) */
 
 :root {
-  --color-background: #FAF6EF;
-  --color-surface: #FFFFFF;
-  --color-text: #1F2A22;
-  --color-text-muted: #5C6B60;
-  --color-border: #E4DFD2;
-  --color-primary: #2B4736;
-  --color-primary-text: #FAF6EF;
-  --color-accent: #C97C3D;
-  --color-accent-text: #22160B;
-  --color-condition-new: #2B4736;
-  --color-condition-like-new: #3E6B52;
-  --color-condition-good: #C97C3D;
-  --color-condition-fair: #A85B3E;
-  --color-header-background: #FAF6EF;
-  --color-footer-background: #1F2A22;
-  --color-footer-text: #FAF6EF;
+  --color-background: #F8EDEB;
+  --color-surface: #E8E8E4;
+  --color-text: #3A2C27;
+  --color-text-muted: #8A7B72;
+  --color-border: #ECE4DB;
+  --color-primary: #FEC89A;
+  --color-primary-text: #3A2C27;
+  --color-accent: #FEC5BB;
+  --color-accent-text: #3A2C27;
+  --color-condition-new: #FEC89A;
+  --color-condition-like-new: #FEC5BB;
+  --color-condition-good: #FCD5CE;
+  --color-condition-fair: #D8E2DC;
+  --color-header-background: #F8EDEB;
+  --color-footer-background: #3A2C27;
+  --color-footer-text: #F8EDEB;
   --font-heading-family: 'Work Sans', sans-serif;
   --font-heading-weight: 700;
   --font-heading-style: normal;
@@ -37,15 +37,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255,255,255,0.85);
+  color: rgba(58,44,39,0.55);
 }
 .placeholder-img svg { width: 42%; height: 42%; }
-.ph-1 { background: linear-gradient(160deg, #3E6B52, #2B4736); }
-.ph-2 { background: linear-gradient(160deg, #C97C3D, #A85B3E); }
-.ph-3 { background: linear-gradient(160deg, #6B7B8C, #3E4A57); }
-.ph-4 { background: linear-gradient(160deg, #B98A5E, #7A5C3E); }
-.ph-5 { background: linear-gradient(160deg, #7C8F6E, #4A5C3E); }
-.ph-6 { background: linear-gradient(160deg, #8C6B7B, #5C3E4E); }
+.ph-1 { background: linear-gradient(160deg, #FFE5D9, #FEC89A); }
+.ph-2 { background: linear-gradient(160deg, #FEC5BB, #FAE1DD); }
+.ph-3 { background: linear-gradient(160deg, #E8E8E4, #D8E2DC); }
+.ph-4 { background: linear-gradient(160deg, #FCD5CE, #FEC5BB); }
+.ph-5 { background: linear-gradient(160deg, #ECE4DB, #D8E2DC); }
+.ph-6 { background: linear-gradient(160deg, #FFD7BA, #FEC89A); }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -158,7 +158,7 @@ h1, h2, h3, h4 {
   background: var(--color-surface);
   color: var(--color-text);
 }
-.badge--condition { background: var(--badge-color, var(--color-primary)); color: #fff; }
+.badge--condition { background: var(--badge-color, var(--color-primary)); color: var(--color-text); }
 .badge--savings { background: var(--color-accent); color: var(--color-accent-text); }
 .badge--sold-out { background: var(--color-text); color: var(--color-background); }
 .badge--authenticity { background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text-muted); text-transform: none; font-weight: 600; }
@@ -352,7 +352,7 @@ section { padding: 48px 0; }
 /* Trust badges */
 .trust-badges__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--grid-spacing); margin-top: 2rem; }
 .trust-badges__item { text-align: center; padding: 1.5rem 1rem; background: var(--color-surface); border-radius: var(--corner-radius); border: 1px solid var(--color-border); }
-.trust-badges__icon { color: var(--color-primary); margin-bottom: 0.75rem; display: flex; justify-content: center; }
+.trust-badges__icon { color: var(--color-text); margin-bottom: 0.75rem; display: flex; justify-content: center; }
 .trust-badges__title { font-size: 1rem; margin-bottom: 0.35em; }
 .trust-badges__text { color: var(--color-text-muted); font-size: 0.9rem; margin: 0; }
 
@@ -404,7 +404,7 @@ section { padding: 48px 0; }
 /* Sell with us */
 .sell-with-us { background: var(--color-surface); }
 .sell-with-us__inner { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
-.sell-with-us__eyebrow { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; font-weight: 700; color: var(--color-accent); }
+.sell-with-us__eyebrow { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; font-weight: 700; color: var(--color-text); }
 .sell-with-us__heading { font-size: clamp(1.6rem, 1.3rem + 1.5vw, 2.4rem); }
 .sell-with-us__text { color: var(--color-text-muted); margin-bottom: 1.5rem; }
 .sell-with-us__media img, .sell-with-us__placeholder { border-radius: var(--corner-radius); width: 100%; aspect-ratio: 4/3; object-fit: cover; }
@@ -413,7 +413,7 @@ section { padding: 48px 0; }
 /* Testimonials */
 .testimonials__grid { display: grid; grid-template-columns: 1fr; gap: var(--grid-spacing); margin-top: 2rem; }
 .testimonial { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--corner-radius); padding: 1.5rem; margin: 0; }
-.testimonial__stars { color: var(--color-accent); display: flex; gap: 0.15rem; margin-bottom: 0.75rem; }
+.testimonial__stars { color: var(--color-text); display: flex; gap: 0.15rem; margin-bottom: 0.75rem; }
 .testimonial__quote { margin: 0 0 1rem; }
 .testimonial__author { font-weight: 600; font-style: normal; color: var(--color-text-muted); font-size: 0.9rem; }
 @media (min-width: 750px) { .testimonials__grid { grid-template-columns: repeat(3, 1fr); } }
@@ -466,7 +466,7 @@ section { padding: 48px 0; }
 .product__title { font-size: clamp(1.5rem, 1.3rem + 1vw, 2.1rem); }
 .product__badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
 .product__info .price { font-size: 1.3rem; margin-bottom: 1rem; }
-.product__one-of-one { display: flex; align-items: center; gap: 0.4em; font-size: 0.85rem; color: var(--color-accent); background: rgba(201,124,61,0.1); padding: 0.6em 0.9em; border-radius: var(--corner-radius); margin-bottom: 1rem; }
+.product__one-of-one { display: flex; align-items: center; gap: 0.4em; font-size: 0.85rem; color: var(--color-text); background: rgba(254,197,187,0.35); padding: 0.6em 0.9em; border-radius: var(--corner-radius); margin-bottom: 1rem; }
 .product-form__option { border: none; padding: 0; margin: 0 0 1.25rem; }
 .product-form__option legend { font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; }
 .product-form__values { display: flex; gap: 0.5rem; flex-wrap: wrap; }

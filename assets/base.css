@@ -111,7 +111,7 @@ h1, h2, h3, h4 {
   background: var(--color-surface);
   color: var(--color-text);
 }
-.badge--condition { background: var(--badge-color, var(--color-primary)); color: #fff; }
+.badge--condition { background: var(--badge-color, var(--color-primary)); color: var(--color-text); }
 .badge--savings { background: var(--color-accent); color: var(--color-accent-text); }
 .badge--sold-out { background: var(--color-text); color: var(--color-background); }
 .badge--authenticity { background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text-muted); text-transform: none; font-weight: 600; }
@@ -305,7 +305,7 @@ section { padding: 48px 0; }
 /* Trust badges */
 .trust-badges__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--grid-spacing); margin-top: 2rem; }
 .trust-badges__item { text-align: center; padding: 1.5rem 1rem; background: var(--color-surface); border-radius: var(--corner-radius); border: 1px solid var(--color-border); }
-.trust-badges__icon { color: var(--color-primary); margin-bottom: 0.75rem; display: flex; justify-content: center; }
+.trust-badges__icon { color: var(--color-text); margin-bottom: 0.75rem; display: flex; justify-content: center; }
 .trust-badges__title { font-size: 1rem; margin-bottom: 0.35em; }
 .trust-badges__text { color: var(--color-text-muted); font-size: 0.9rem; margin: 0; }
 
@@ -357,7 +357,7 @@ section { padding: 48px 0; }
 /* Sell with us */
 .sell-with-us { background: var(--color-surface); }
 .sell-with-us__inner { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
-.sell-with-us__eyebrow { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; font-weight: 700; color: var(--color-accent); }
+.sell-with-us__eyebrow { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; font-weight: 700; color: var(--color-text); }
 .sell-with-us__heading { font-size: clamp(1.6rem, 1.3rem + 1.5vw, 2.4rem); }
 .sell-with-us__text { color: var(--color-text-muted); margin-bottom: 1.5rem; }
 .sell-with-us__media img, .sell-with-us__placeholder { border-radius: var(--corner-radius); width: 100%; aspect-ratio: 4/3; object-fit: cover; }
@@ -366,7 +366,7 @@ section { padding: 48px 0; }
 /* Testimonials */
 .testimonials__grid { display: grid; grid-template-columns: 1fr; gap: var(--grid-spacing); margin-top: 2rem; }
 .testimonial { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--corner-radius); padding: 1.5rem; margin: 0; }
-.testimonial__stars { color: var(--color-accent); display: flex; gap: 0.15rem; margin-bottom: 0.75rem; }
+.testimonial__stars { color: var(--color-text); display: flex; gap: 0.15rem; margin-bottom: 0.75rem; }
 .testimonial__quote { margin: 0 0 1rem; }
 .testimonial__author { font-weight: 600; font-style: normal; color: var(--color-text-muted); font-size: 0.9rem; }
 @media (min-width: 750px) { .testimonials__grid { grid-template-columns: repeat(3, 1fr); } }
@@ -419,7 +419,7 @@ section { padding: 48px 0; }
 .product__title { font-size: clamp(1.5rem, 1.3rem + 1vw, 2.1rem); }
 .product__badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
 .product__info .price { font-size: 1.3rem; margin-bottom: 1rem; }
-.product__one-of-one { display: flex; align-items: center; gap: 0.4em; font-size: 0.85rem; color: var(--color-accent); background: rgba(201,124,61,0.1); padding: 0.6em 0.9em; border-radius: var(--corner-radius); margin-bottom: 1rem; }
+.product__one-of-one { display: flex; align-items: center; gap: 0.4em; font-size: 0.85rem; color: var(--color-text); background: rgba(254,197,187,0.35); padding: 0.6em 0.9em; border-radius: var(--corner-radius); margin-bottom: 1rem; }
 .product-form__option { border: none; padding: 0; margin: 0 0 1.25rem; }
 .product-form__option legend { font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; }
 .product-form__values { display: flex; gap: 0.5rem; flex-wrap: wrap; }

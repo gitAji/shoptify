@@ -110,6 +110,26 @@ Add-to-cart, quantity change, and line-item removal all use Shopify's
 `/cart/add.js`, `/cart/change.js`, and `/cart.js` endpoints — no cart app
 required.
 
+## Static design preview (`static-preview/`)
+
+This repository's real deliverable — `layout/`, `sections/`, `snippets/`,
+`templates/`, `config/`, `locales/` — is **Shopify theme source code**. It's
+Liquid + JSON that only renders inside Shopify's own infrastructure (the
+Storefront/Admin APIs, cart, checkout, product data). It **cannot** be
+deployed to a static host like Netlify, Vercel, or GitHub Pages — there's no
+Liquid engine or backend there to run it, so a static host just serves the
+raw `.liquid`/`.json` files as text with no working homepage.
+
+For a look-and-feel preview that *can* run on a static host, `static-preview/`
+is a small, separate, self-contained mockup (plain HTML/CSS/JS, no build
+step) that reuses the theme's actual visual design — same stylesheet, same
+component structure — with sample product data and a `localStorage`-backed
+cart so it's click-through-able. `netlify.toml` points this repo's connected
+Netlify site at that folder. **It is a design preview only**: there's no real
+inventory, checkout, or backend behind it (an on-page banner says so). To see
+the actual working theme, follow "Getting started" below against a real
+Shopify store.
+
 ## Getting started
 
 1. Install the [Shopify CLI](https://shopify.dev/docs/api/shopify-cli).

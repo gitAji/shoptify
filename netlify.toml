@@ -1,0 +1,13 @@
+# This repository's primary contents are Shopify theme source files
+# (Liquid templates + JSON configs) — they only run inside a Shopify store
+# and cannot be served by Netlify. This config points Netlify at a small
+# static HTML/CSS/JS mockup instead, so there's something to preview here:
+# same visual design and component styles as the real theme, with sample
+# data and a client-side-only cart (no real checkout, cart, or product
+# data — that only exists on an actual Shopify store).
+#
+# To run the real theme, use the Shopify CLI against a Shopify store —
+# see the "Getting started" section in README.md.
+
+[build]
+  publish = "static-preview"

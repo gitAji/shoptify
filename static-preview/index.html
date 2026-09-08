@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reloop Resale — Great finds. Second life.</title>
+<meta name="description" content="A static design preview of the Reloop Resale Shopify theme — condition badges, authenticity guarantees, and a sell-with-us trade-in flow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="visually-hidden skip-to-content" href="#main-content">Skip to content</a>
+
+<div class="announcement-bar">
+  <p>This is a static design preview — not a working store. <a href="../README.md" style="text-decoration:underline;">See the real Shopify theme →</a></p>
+</div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <button type="button" class="icon-button site-header__menu-toggle" data-menu-drawer-toggle aria-label="Menu">☰</button>
+    <a href="index.html" class="site-header__logo"><span class="site-header__logo-text">Reloop Resale</span></a>
+    <nav class="site-header__nav" aria-label="Primary">
+      <ul class="site-header__nav-list">
+        <li class="site-header__nav-item"><a href="collection.html" class="site-header__nav-link" aria-current="page">New Arrivals</a></li>
+        <li class="site-header__nav-item"><a href="collection.html" class="site-header__nav-link">Outerwear</a></li>
+        <li class="site-header__nav-item"><a href="collection.html" class="site-header__nav-link">Denim</a></li>
+        <li class="site-header__nav-item"><a href="collection.html" class="site-header__nav-link">Footwear</a></li>
+        <li class="site-header__nav-item"><a href="index.html#sell-with-us" class="site-header__nav-link">Sell With Us</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <button type="button" class="icon-button" data-search-drawer-toggle aria-label="Search">🔍</button>
+      <a href="#" class="icon-button" aria-label="Account">👤</a>
+      <button type="button" class="icon-button site-header__cart-toggle" data-cart-drawer-toggle aria-label="Cart">
+        🛍️
+        <span class="cart-count-bubble" data-cart-count hidden>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="menu-drawer" class="menu-drawer" aria-hidden="true">
+  <div class="menu-drawer__overlay" data-menu-drawer-close></div>
+  <div class="menu-drawer__panel">
+    <div class="menu-drawer__header">
+      <span class="site-header__logo-text">Reloop Resale</span>
+      <button type="button" class="icon-button" data-menu-drawer-close aria-label="Close">✕</button>
+    </div>
+    <ul class="menu-drawer__list">
+      <li><a href="collection.html">New Arrivals</a></li>
+      <li><a href="collection.html">Outerwear</a></li>
+      <li><a href="collection.html">Denim</a></li>
+      <li><a href="collection.html">Footwear</a></li>
+      <li><a href="index.html#sell-with-us">Sell With Us</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="search-drawer" class="search-drawer" aria-hidden="true">
+  <div class="search-drawer__overlay" data-search-drawer-close></div>
+  <div class="search-drawer__panel">
+    <form class="search-drawer__form" onsubmit="return false;">
+      🔍
+      <input type="search" class="search-drawer__input" placeholder="Search for brands, items, categories...">
+      <button type="button" class="icon-button" data-search-drawer-close aria-label="Close">✕</button>
+    </form>
+  </div>
+</div>
+
+<aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+  <div class="cart-drawer__overlay" data-cart-drawer-close></div>
+  <div class="cart-drawer__panel" role="dialog" aria-modal="true">
+    <header class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Your bag</h2>
+      <button type="button" class="icon-button" data-cart-drawer-close aria-label="Close">✕</button>
+    </header>
+    <div class="cart-drawer__body" id="cart-drawer-body"></div>
+    <footer class="cart-drawer__footer" id="cart-drawer-footer" hidden>
+      <div class="cart-drawer__notice"><p>Every item is inspected before it ships. Because most pieces are one-of-a-kind, availability isn't guaranteed until checkout is complete.</p></div>
+      <div class="cart-drawer__subtotal-row"><span>Subtotal</span><span id="cart-drawer-subtotal">$0</span></div>
+      <button type="button" class="button button--primary button--full" onclick="alert('This is a static design preview — checkout only works on a real Shopify store.');">Checkout</button>
+    </footer>
+  </div>
+</aside>
+
+<main id="main-content">
+  <section class="hero" style="--hero-overlay-opacity: 0.55;">
+    <div class="hero__media ph-1" style="position:absolute;inset:0;"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow">Curated resale</p>
+      <h1 class="hero__heading">Great finds.<br>Second life.</h1>
+      <p class="hero__text">Every piece is authenticated, inspected, and priced fairly — up to 70% off retail.</p>
+      <div class="hero__actions">
+        <a href="collection.html" class="button button--primary">Shop new arrivals</a>
+        <a href="#sell-with-us" class="button button--outline" style="border-color:rgba(255,255,255,0.6);color:#fff;">Sell your items</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-badges">
+    <div class="container">
+      <h2 class="section-heading section-heading--center">Buy secondhand with confidence</h2>
+      <div class="trust-badges__grid">
+        <div class="trust-badges__item">
+          <div class="trust-badges__icon">🛡️</div>
+          <h3 class="trust-badges__title">Authenticated</h3>
+          <p class="trust-badges__text">Every item is inspected by our team before listing.</p>
+        </div>
+        <div class="trust-badges__item">
+          <div class="trust-badges__icon">🚚</div>
+          <h3 class="trust-badges__title">Fast, tracked shipping</h3>
+          <p class="trust-badges__text">Most orders ship within 1-2 business days.</p>
+        </div>
+        <div class="trust-badges__item">
+          <div class="trust-badges__icon">📦</div>
+          <h3 class="trust-badges__title">Easy 14-day returns</h3>
+          <p class="trust-badges__text">Not the right fit? Send it back, no questions asked.</p>
+        </div>
+        <div class="trust-badges__item">
+          <div class="trust-badges__icon">♻️</div>
+          <h3 class="trust-badges__title">Better for the planet</h3>
+          <p class="trust-badges__text">Buying resale keeps good things out of landfill.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-collection">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-heading">New arrivals</h2>
+          <p class="section-subheading">Just in — inspected, priced, and ready to ship.</p>
+        </div>
+        <a href="collection.html" class="section-header__link">View all →</a>
+      </div>
+      <div class="product-grid product-grid--4-col" id="new-arrivals-grid"></div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-heading section-heading--center">Selling with us is simple</h2>
+      <p class="section-subheading section-subheading--center">Turn your closet or storeroom into cash in four easy steps.</p>
+      <ol class="how-it-works__steps">
+        <li class="how-it-works__step"><span class="how-it-works__number">1</span><h3 class="how-it-works__title">Submit your items</h3><p class="how-it-works__text">Tell us what you're looking to sell using our quick intake form.</p></li>
+        <li class="how-it-works__step"><span class="how-it-works__number">2</span><h3 class="how-it-works__title">Ship or drop off</h3><p class="how-it-works__text">Send items in with a prepaid label, or drop them at a partner location.</p></li>
+        <li class="how-it-works__step"><span class="how-it-works__number">3</span><h3 class="how-it-works__title">We authenticate &amp; list</h3><p class="how-it-works__text">Our team inspects, prices, photographs, and lists each piece.</p></li>
+        <li class="how-it-works__step"><span class="how-it-works__number">4</span><h3 class="how-it-works__title">Get paid</h3><p class="how-it-works__text">Once your item sells, your payout is sent directly to you.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="brand-marquee">
+    <div class="container"><p class="brand-marquee__heading">Brands we resell</p></div>
+    <div class="brand-marquee__track">
+      <div class="brand-marquee__list">
+        <span class="brand-marquee__item">Patagonia</span>
+        <span class="brand-marquee__item">Levi's</span>
+        <span class="brand-marquee__item">Nike</span>
+        <span class="brand-marquee__item">Carhartt</span>
+        <span class="brand-marquee__item">The North Face</span>
+        <span class="brand-marquee__item">Coach</span>
+      </div>
+      <div class="brand-marquee__list" aria-hidden="true">
+        <span class="brand-marquee__item">Patagonia</span>
+        <span class="brand-marquee__item">Levi's</span>
+        <span class="brand-marquee__item">Nike</span>
+        <span class="brand-marquee__item">Carhartt</span>
+        <span class="brand-marquee__item">The North Face</span>
+        <span class="brand-marquee__item">Coach</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sell-with-us" id="sell-with-us">
+    <div class="container sell-with-us__inner">
+      <div class="sell-with-us__content">
+        <p class="sell-with-us__eyebrow">Have items to sell?</p>
+        <h2 class="sell-with-us__heading">Turn your closet into cash</h2>
+        <p class="sell-with-us__text">We handle the authentication, photography, listing, and shipping — you just send it in and get paid when it sells.</p>
+        <a href="#" class="button button--accent" onclick="alert('This is a static design preview — the real theme links this to your intake form.'); return false;">Start selling</a>
+      </div>
+      <div class="sell-with-us__media ph-5" style="border-radius:var(--corner-radius);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#3A2C27;">
+        <div style="text-align:center;">
+          <div style="font-size:2.5rem;">👜</div>
+          <p style="opacity:.85;margin-top:.5rem;">Photo placeholder</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-heading section-heading--center">Loved by resale shoppers</h2>
+      <div class="testimonials__grid">
+        <blockquote class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__quote">"Better than new — the condition notes were spot on and it arrived so fast."</p>
+          <cite class="testimonial__author">Jordan M.</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__quote">"I sold three bags through their trade-in program and got paid within a week."</p>
+          <cite class="testimonial__author">Priya S.</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__quote">"My go-to for pre-loved staples. Every item feels genuinely inspected."</p>
+          <cite class="testimonial__author">Alex T.</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter-section">
+    <div class="container newsletter-section__inner">
+      <div>
+        <h2 class="section-heading">Never miss a drop</h2>
+        <p class="section-subheading">New arrivals land daily. Get first pick.</p>
+      </div>
+      <form class="newsletter-form" data-demo-form>
+        <div class="newsletter-form__row">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="button button--primary">Subscribe</button>
+        </div>
+        <p class="form-success" hidden>Thanks for subscribing!</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <p class="site-footer__logo-text">Reloop Resale</p>
+        <div class="site-footer__about">We buy, inspect, and resell pre-loved and surplus goods — extending their story instead of the landfill's.</div>
+        <ul class="site-footer__social">
+          <li><a href="#" aria-label="Instagram">IG</a></li>
+          <li><a href="#" aria-label="TikTok">TT</a></li>
+          <li><a href="#" aria-label="Facebook">FB</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Shop</h3>
+        <ul><li><a href="collection.html">New Arrivals</a></li><li><a href="collection.html">Outerwear</a></li><li><a href="collection.html">Denim</a></li><li><a href="collection.html">Footwear</a></li></ul>
+      </div>
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Help</h3>
+        <div class="site-footer__text">Shipping, returns, and contact info would live here.</div>
+      </div>
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Stay in the loop</h3>
+        <p class="site-footer__text">New drops, restocks, and resale tips.</p>
+        <form class="newsletter-form" data-demo-form>
+          <div class="newsletter-form__row">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="button button--primary">Subscribe</button>
+          </div>
+          <p class="form-success" hidden>Thanks for subscribing!</p>
+        </form>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">© 2026 Reloop Resale. All rights reserved.</p>
+      <ul class="site-footer__trust">
+        <li>🛡️ Authenticated &amp; inspected</li>
+        <li>♻️ Circular fashion</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

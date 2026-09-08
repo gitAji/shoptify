@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shop All — Reloop Resale</title>
+<meta name="description" content="Browse the full Reloop Resale catalog with condition and brand filters — a static design preview.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="visually-hidden skip-to-content" href="#main-content">Skip to content</a>
+
+<div class="announcement-bar">
+  <p>This is a static design preview — not a working store. <a href="../README.md" style="text-decoration:underline;">See the real Shopify theme →</a></p>
+</div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <button type="button" class="icon-button site-header__menu-toggle" data-menu-drawer-toggle aria-label="Menu">☰</button>
+    <a href="index.html" class="site-header__logo"><span class="site-header__logo-text">Reloop Resale</span></a>
+    <nav class="site-header__nav" aria-label="Primary">
+      <ul class="site-header__nav-list">
+        <li class="site-header__nav-item"><a href="collection.html" class="site-header__nav-link" aria-current="page">New Arrivals</a></li>
+        <li class="site-header__nav-item"><a href="collection.html" class="site-header__nav-link">Outerwear</a></li>
+        <li class="site-header__nav-item"><a href="collection.html" class="site-header__nav-link">Denim</a></li>
+        <li class="site-header__nav-item"><a href="collection.html" class="site-header__nav-link">Footwear</a></li>
+        <li class="site-header__nav-item"><a href="index.html#sell-with-us" class="site-header__nav-link">Sell With Us</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <button type="button" class="icon-button" data-search-drawer-toggle aria-label="Search">🔍</button>
+      <a href="#" class="icon-button" aria-label="Account">👤</a>
+      <button type="button" class="icon-button site-header__cart-toggle" data-cart-drawer-toggle aria-label="Cart">
+        🛍️
+        <span class="cart-count-bubble" data-cart-count hidden>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="menu-drawer" class="menu-drawer" aria-hidden="true">
+  <div class="menu-drawer__overlay" data-menu-drawer-close></div>
+  <div class="menu-drawer__panel">
+    <div class="menu-drawer__header">
+      <span class="site-header__logo-text">Reloop Resale</span>
+      <button type="button" class="icon-button" data-menu-drawer-close aria-label="Close">✕</button>
+    </div>
+    <ul class="menu-drawer__list">
+      <li><a href="collection.html">New Arrivals</a></li>
+      <li><a href="collection.html">Outerwear</a></li>
+      <li><a href="collection.html">Denim</a></li>
+      <li><a href="collection.html">Footwear</a></li>
+      <li><a href="index.html#sell-with-us">Sell With Us</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="search-drawer" class="search-drawer" aria-hidden="true">
+  <div class="search-drawer__overlay" data-search-drawer-close></div>
+  <div class="search-drawer__panel">
+    <form class="search-drawer__form" onsubmit="return false;">
+      🔍
+      <input type="search" class="search-drawer__input" placeholder="Search for brands, items, categories...">
+      <button type="button" class="icon-button" data-search-drawer-close aria-label="Close">✕</button>
+    </form>
+  </div>
+</div>
+
+<aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+  <div class="cart-drawer__overlay" data-cart-drawer-close></div>
+  <div class="cart-drawer__panel" role="dialog" aria-modal="true">
+    <header class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Your bag</h2>
+      <button type="button" class="icon-button" data-cart-drawer-close aria-label="Close">✕</button>
+    </header>
+    <div class="cart-drawer__body" id="cart-drawer-body"></div>
+    <footer class="cart-drawer__footer" id="cart-drawer-footer" hidden>
+      <div class="cart-drawer__notice"><p>Every item is inspected before it ships. Because most pieces are one-of-a-kind, availability isn't guaranteed until checkout is complete.</p></div>
+      <div class="cart-drawer__subtotal-row"><span>Subtotal</span><span id="cart-drawer-subtotal">$0</span></div>
+      <button type="button" class="button button--primary button--full" onclick="alert('This is a static design preview — checkout only works on a real Shopify store.');">Checkout</button>
+    </footer>
+  </div>
+</aside>
+
+<main id="main-content">
+  <section class="collection">
+    <div class="collection__header">
+      <div class="container">
+        <h1 class="collection__title">Shop all</h1>
+        <div class="collection__description">Every piece authenticated and condition-graded before it's listed.</div>
+      </div>
+    </div>
+
+    <div class="container collection__inner">
+      <aside class="collection__filters">
+        <details class="filter-group" open>
+          <summary>Condition</summary>
+          <div class="filter-group__options">
+            <label class="filter-option"><input type="checkbox" value="new" data-filter-condition> <span>New</span></label>
+            <label class="filter-option"><input type="checkbox" value="like-new" data-filter-condition> <span>Like New</span></label>
+            <label class="filter-option"><input type="checkbox" value="good" data-filter-condition> <span>Good</span></label>
+            <label class="filter-option"><input type="checkbox" value="fair" data-filter-condition> <span>Fair</span></label>
+          </div>
+        </details>
+        <details class="filter-group" open>
+          <summary>Category</summary>
+          <div class="filter-group__options" id="category-filters"></div>
+        </details>
+        <div class="filter-actions">
+          <button type="button" class="button button--outline button--full" id="clear-filters">Clear all</button>
+        </div>
+      </aside>
+
+      <div class="collection__results">
+        <div class="collection__toolbar">
+          <p class="collection__count" id="results-count"></p>
+          <div class="collection__sort">
+            <label for="SortBy" class="visually-hidden">Sort by</label>
+            <select id="SortBy">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price, low to high</option>
+              <option value="price-desc">Price, high to low</option>
+              <option value="title-asc">Alphabetically, A-Z</option>
+            </select>
+          </div>
+        </div>
+        <div class="product-grid product-grid--4-col" id="collection-grid"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <p class="site-footer__logo-text">Reloop Resale</p>
+        <div class="site-footer__about">We buy, inspect, and resell pre-loved and surplus goods — extending their story instead of the landfill's.</div>
+        <ul class="site-footer__social">
+          <li><a href="#" aria-label="Instagram">IG</a></li>
+          <li><a href="#" aria-label="TikTok">TT</a></li>
+          <li><a href="#" aria-label="Facebook">FB</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Shop</h3>
+        <ul><li><a href="collection.html">New Arrivals</a></li><li><a href="collection.html">Outerwear</a></li><li><a href="collection.html">Denim</a></li><li><a href="collection.html">Footwear</a></li></ul>
+      </div>
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Help</h3>
+        <div class="site-footer__text">Shipping, returns, and contact info would live here.</div>
+      </div>
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Stay in the loop</h3>
+        <p class="site-footer__text">New drops, restocks, and resale tips.</p>
+        <form class="newsletter-form" data-demo-form>
+          <div class="newsletter-form__row">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="button button--primary">Subscribe</button>
+          </div>
+          <p class="form-success" hidden>Thanks for subscribing!</p>
+        </form>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">© 2026 Reloop Resale. All rights reserved.</p>
+      <ul class="site-footer__trust">
+        <li>🛡️ Authenticated &amp; inspected</li>
+        <li>♻️ Circular fashion</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+<script>
+  (function () {
+    var allProducts = window.ReloopProducts;
+    var categories = Array.from(new Set(allProducts.map(function (p) { return p.category; })));
+    var categoryFiltersEl = document.getElementById('category-filters');
+    categoryFiltersEl.innerHTML = categories.map(function (c) {
+      return '<label class="filter-option"><input type="checkbox" value="' + c + '" data-filter-category> <span>' + c + '</span></label>';
+    }).join('');
+
+    function currentFilters() {
+      var conditions = Array.from(document.querySelectorAll('[data-filter-condition]:checked')).map(function (el) { return el.value; });
+      var cats = Array.from(document.querySelectorAll('[data-filter-category]:checked')).map(function (el) { return el.value; });
+      return { conditions: conditions, cats: cats };
+    }
+
+    function applyFiltersAndSort() {
+      var f = currentFilters();
+      var list = allProducts.filter(function (p) {
+        var conditionOk = f.conditions.length === 0 || f.conditions.indexOf(p.condition) !== -1;
+        var catOk = f.cats.length === 0 || f.cats.indexOf(p.category) !== -1;
+        return conditionOk && catOk;
+      });
+
+      var sort = document.getElementById('SortBy').value;
+      if (sort === 'price-asc') list.sort(function (a, b) { return a.price - b.price; });
+      else if (sort === 'price-desc') list.sort(function (a, b) { return b.price - a.price; });
+      else if (sort === 'title-asc') list.sort(function (a, b) { return a.title.localeCompare(b.title); });
+
+      window.ReloopRenderGrid('collection-grid', list);
+      var countEl = document.getElementById('results-count');
+      countEl.textContent = list.length + (list.length === 1 ? ' item' : ' items');
+    }
+
+    document.addEventListener('change', function (event) {
+      if (event.target.matches('[data-filter-condition], [data-filter-category], #SortBy')) applyFiltersAndSort();
+    });
+    document.getElementById('clear-filters').addEventListener('click', function () {
+      document.querySelectorAll('[data-filter-condition], [data-filter-category]').forEach(function (el) { el.checked = false; });
+      applyFiltersAndSort();
+    });
+
+    document.addEventListener('DOMContentLoaded', applyFiltersAndSort);
+  })();
+</script>
+</body>
+</html>

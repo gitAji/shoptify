@@ -1,4 +1,51 @@
-/* Reloop Resale theme — base stylesheet */
+/* Reloop Resale — static design preview stylesheet
+   (adapted from the Shopify theme's assets/base.css with concrete
+   default values in place of Liquid-generated settings) */
+
+:root {
+  --color-background: #F8EDEB;
+  --color-surface: #E8E8E4;
+  --color-text: #3A2C27;
+  --color-text-muted: #8A7B72;
+  --color-border: #ECE4DB;
+  --color-primary: #FEC89A;
+  --color-primary-text: #3A2C27;
+  --color-accent: #FEC5BB;
+  --color-accent-text: #3A2C27;
+  --color-condition-new: #FEC89A;
+  --color-condition-like-new: #FEC5BB;
+  --color-condition-good: #FCD5CE;
+  --color-condition-fair: #D8E2DC;
+  --color-header-background: #F8EDEB;
+  --color-footer-background: #3A2C27;
+  --color-footer-text: #F8EDEB;
+  --font-heading-family: 'Work Sans', sans-serif;
+  --font-heading-weight: 700;
+  --font-heading-style: normal;
+  --font-body-family: 'Assistant', sans-serif;
+  --font-body-weight: 400;
+  --font-body-style: normal;
+  --page-width: 1280px;
+  --grid-spacing: 24px;
+  --corner-radius: 8px;
+}
+
+/* Placeholder "photography" tiles used in place of real product images */
+.placeholder-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(58,44,39,0.55);
+}
+.placeholder-img svg { width: 42%; height: 42%; }
+.ph-1 { background: linear-gradient(160deg, #FFE5D9, #FEC89A); }
+.ph-2 { background: linear-gradient(160deg, #FEC5BB, #FAE1DD); }
+.ph-3 { background: linear-gradient(160deg, #E8E8E4, #D8E2DC); }
+.ph-4 { background: linear-gradient(160deg, #FCD5CE, #FEC5BB); }
+.ph-5 { background: linear-gradient(160deg, #ECE4DB, #D8E2DC); }
+.ph-6 { background: linear-gradient(160deg, #FFD7BA, #FEC89A); }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }

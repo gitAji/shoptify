@@ -43,31 +43,31 @@
         "type": "color",
         "id": "color_background",
         "label": "Background",
-        "default": "#FAF6EF"
+        "default": "#F8EDEB"
       },
       {
         "type": "color",
         "id": "color_surface",
         "label": "Card / surface background",
-        "default": "#FFFFFF"
+        "default": "#E8E8E4"
       },
       {
         "type": "color",
         "id": "color_text",
         "label": "Text",
-        "default": "#1F2A22"
+        "default": "#3A2C27"
       },
       {
         "type": "color",
         "id": "color_text_muted",
         "label": "Muted text",
-        "default": "#5C6B60"
+        "default": "#8A7B72"
       },
       {
         "type": "color",
         "id": "color_border",
         "label": "Borders",
-        "default": "#E4DFD2"
+        "default": "#ECE4DB"
       },
       {
         "type": "header",
@@ -77,25 +77,25 @@
         "type": "color",
         "id": "color_primary",
         "label": "Primary (buttons, links)",
-        "default": "#2B4736"
+        "default": "#FEC89A"
       },
       {
         "type": "color",
         "id": "color_primary_text",
         "label": "Text on primary",
-        "default": "#FAF6EF"
+        "default": "#3A2C27"
       },
       {
         "type": "color",
         "id": "color_accent",
         "label": "Accent (badges, highlights)",
-        "default": "#C97C3D"
+        "default": "#FEC5BB"
       },
       {
         "type": "color",
         "id": "color_accent_text",
         "label": "Text on accent",
-        "default": "#22160B"
+        "default": "#3A2C27"
       },
       {
         "type": "header",
@@ -105,25 +105,25 @@
         "type": "color",
         "id": "color_condition_new",
         "label": "\"New / Deadstock\" badge",
-        "default": "#2B4736"
+        "default": "#FEC89A"
       },
       {
         "type": "color",
         "id": "color_condition_like_new",
         "label": "\"Like New\" badge",
-        "default": "#3E6B52"
+        "default": "#FEC5BB"
       },
       {
         "type": "color",
         "id": "color_condition_good",
         "label": "\"Good\" badge",
-        "default": "#C97C3D"
+        "default": "#FCD5CE"
       },
       {
         "type": "color",
         "id": "color_condition_fair",
         "label": "\"Fair\" badge",
-        "default": "#A85B3E"
+        "default": "#D8E2DC"
       },
       {
         "type": "header",
@@ -133,19 +133,19 @@
         "type": "color",
         "id": "color_header_background",
         "label": "Header background",
-        "default": "#FAF6EF"
+        "default": "#F8EDEB"
       },
       {
         "type": "color",
         "id": "color_footer_background",
         "label": "Footer background",
-        "default": "#1F2A22"
+        "default": "#3A2C27"
       },
       {
         "type": "color",
         "id": "color_footer_text",
         "label": "Footer text",
-        "default": "#FAF6EF"
+        "default": "#F8EDEB"
       }
     ]
   },

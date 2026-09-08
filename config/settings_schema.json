@@ -199,7 +199,7 @@
     "settings": [
       {
         "type": "range",
-        "id": "page_width",
+        "id": "reloop_page_width",
         "min": 1000,
         "max": 1600,
         "step": 20,

@@ -45,7 +45,7 @@
       --font-body-weight: {{ settings.font_body.weight }};
       --font-body-style: {{ settings.font_body.style }};
       --font-body-scale: {{ settings.font_body_scale | default: 100 | divided_by: 100.0 }};
-      --page-width: {{ settings.page_width | default: 1280 }}px;
+      --page-width: {{ settings.reloop_page_width | default: 1280 }}px;
       --grid-spacing: {{ settings.grid_spacing | default: 24 }}px;
       --corner-radius: {{ settings.corner_radius | default: 8 }}px;
     }
